@@ -8,6 +8,7 @@ public class ShootScript : MonoBehaviour
     public GameObject theObject;
     public LayerMask layerMask;
     public bool canShoot = false;
+    public AudioSource shotSound;
     [Header("Muzzle Flash")]
     public Transform muzzleFlashSpot;
     public GameObject muzzleFlashObject;
@@ -24,6 +25,10 @@ public class ShootScript : MonoBehaviour
         {
             //Creates the muzzle flash
             Instantiate(muzzleFlashObject, muzzleFlashSpot);
+
+            //Plays the shooting sound and randomizes the pitch slightly
+            shotSound.pitch = Random.Range(0.8f, 1.2f);
+            shotSound.Play();
 
             //Sets off the animation trigger
             animator.SetTrigger("Shoot");
