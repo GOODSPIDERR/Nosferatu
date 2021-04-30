@@ -13,8 +13,8 @@ public class SineSway : MonoBehaviour
     Vector3 newPositionPlus, newPositionMinus;
     Quaternion newRotationPlus, newRotationMinus;
     [Header("Position Offsets")]
-    public Vector3 positionOffsetPlus = new Vector3(0.2f, 0.1f, 0.1f);
-    public Vector3 positionOffsetMinus = new Vector3(-0.2f, 0.1f, 0.1f);
+    public Vector3 positionOffsetPlus = new Vector3(0.1f, 0.05f, 0.05f);
+    public Vector3 positionOffsetMinus = new Vector3(-0.1f, 0.05f, 0.05f);
     [Header("Rotation Offsets")]
     public Quaternion rotationOffsetPlus;
     public Quaternion rotationOffsetMinus;
@@ -39,10 +39,10 @@ public class SineSway : MonoBehaviour
 
     void Update()
     {
-        //Finds the current speed to control the sway
+        //Finds the current movement speed to control when the weapon sways
         currentSpeed = Mathf.Clamp(Mathf.Max(Mathf.Abs(playerMovementScript.move.x), Mathf.Abs(playerMovementScript.move.z)), 0f, 1f);
 
-        Debug.Log(Mathf.Clamp(Mathf.Max(Mathf.Abs(playerMovementScript.move.x), Mathf.Abs(playerMovementScript.move.z)), 0f, 1f));
+        //Debug.Log(Mathf.Clamp(Mathf.Max(Mathf.Abs(playerMovementScript.move.x), Mathf.Abs(playerMovementScript.move.z)), 0f, 1f));
 
         //Index calculator for the Sine function
         index = (index + Time.deltaTime * speedMultiplier * currentSpeed) % (Mathf.PI * 2f);
@@ -53,14 +53,21 @@ public class SineSway : MonoBehaviour
             return Mathf.Sin(index);
         }
 
+        //Return to default position when you stop moving
         if (currentSpeed <= 0.25f)
         {
             float i = 0f;
-            if (index < Mathf.PI) index = Mathf.Lerp(index, 0f, i + Time.deltaTime * speedMultiplier);
-            else index = Mathf.Lerp(index, Mathf.PI, i + Time.deltaTime * speedMultiplier);
+            if (index < Mathf.PI)
+            {
+                index = Mathf.Lerp(index, 0f, i + Time.deltaTime * speedMultiplier);
+            }
+            else
+            {
+                index = Mathf.Lerp(index, Mathf.PI, i + Time.deltaTime * speedMultiplier);
+            }
         }
 
-        //First lerp for the negative position
+        //First lerp for the negative transformations
         if (Sinq() <= 0f)
         {
             //Position transforms
@@ -80,7 +87,7 @@ public class SineSway : MonoBehaviour
             transform.localRotation = new Quaternion(newRotationX, newRotationY, newRotationZ, newRotationW);
         }
 
-        //Second lerp for the positive position
+        //Second lerp for the positive transformations
         else if (Sinq() > 0f)
         {
             //Position transforms
