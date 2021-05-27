@@ -14,6 +14,7 @@ public class PlayerMovementScript : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public GameObject weapon1, weapon2;
 
     Vector3 velocity;
     bool isGrounded;
@@ -41,6 +42,21 @@ public class PlayerMovementScript : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
+
+        /*
+        if (Input.GetButtonDown("Weapon1"))
+        {
+            weapon1.SetActive(true);
+            weapon2.SetActive(false);
+
+        }
+
+        if (Input.GetButtonDown("Weapon2"))
+        {
+            weapon1.SetActive(false);
+            weapon2.SetActive(true);
+        }
+        */
 
         velocity.y += gravity * Time.deltaTime;
 
