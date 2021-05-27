@@ -1017,6 +1017,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1286398597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -915329352776047908, guid: 495455cbce5d8af4c8b7fb92a4327b5b, type: 3}
+  m_PrefabInstance: {fileID: 601487257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1286398601
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286398597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1728677615624701272, guid: 495455cbce5d8af4c8b7fb92a4327b5b, type: 3}
 --- !u!1 &1306035058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8416272007918961125, guid: 495455cbce5d8af4c8b7fb92a4327b5b, type: 3}
@@ -1424,6 +1443,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   deadObject: {fileID: 4658858655151244664, guid: 19afa5b27b7c1ba4cb9ca3e029bbef95, type: 3}
+--- !u!1 &1623446779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 856002807916616872, guid: 495455cbce5d8af4c8b7fb92a4327b5b, type: 3}
+  m_PrefabInstance: {fileID: 601487257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1623446783
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623446779}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5829457244137219937, guid: 495455cbce5d8af4c8b7fb92a4327b5b, type: 3}
 --- !u!1 &1750615212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,7 +1748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f7cc1ef5836b34d81db981ab0f40e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1439700258}
   impactVFX: {fileID: 4829897688918431338, guid: 30351f8dbcb66724fba28801b8a9a518, type: 3}
   weapon1: {fileID: 1835919915}
   weapon2: {fileID: 152393760}
@@ -1721,6 +1758,10 @@ MonoBehaviour:
   canSwitch: 1
   currentWeapon: 1
   shotSound: {fileID: 1821937048}
+  shakeDuration: 0.2
+  shakeStrength: {x: 0.2, y: 0.2, z: 0}
+  shakeFrequency: 20
+  shakeRandomness: 10
   muzzleFlashSpot: {fileID: 1933910367}
   muzzleFlashObject: {fileID: 833436421769514329, guid: 06db763e79ac72046b2334a747078ad3, type: 3}
 --- !u!95 &1821937047
@@ -2108,7 +2149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f7cc1ef5836b34d81db981ab0f40e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1439700258}
   impactVFX: {fileID: 4829897688918431338, guid: 30351f8dbcb66724fba28801b8a9a518, type: 3}
   weapon1: {fileID: 1835919915}
   weapon2: {fileID: 152393760}
@@ -2119,6 +2159,10 @@ MonoBehaviour:
   canSwitch: 1
   currentWeapon: 1
   shotSound: {fileID: 1983865511}
+  shakeDuration: 0.5
+  shakeStrength: {x: 1, y: 1, z: 0}
+  shakeFrequency: 30
+  shakeRandomness: 20
   muzzleFlashSpot: {fileID: 573089813}
   muzzleFlashObject: {fileID: 833436421769514329, guid: 06db763e79ac72046b2334a747078ad3, type: 3}
 --- !u!114 &1983865513
