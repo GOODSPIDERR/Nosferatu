@@ -196,7 +196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &152393761
 Transform:
   m_ObjectHideFlags: 0
@@ -205,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152393760}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0.247, y: -0.22, z: 0.17}
+  m_LocalPosition: {x: 0.2141, y: -0.22, z: 0.17}
   m_LocalScale: {x: 0.08642101, y: 0.08642101, z: 0.08642101}
   m_Children:
   - {fileID: 1983865509}
@@ -1914,7 +1914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1835919916
 Transform:
   m_ObjectHideFlags: 0
@@ -2164,7 +2164,7 @@ MonoBehaviour:
   shakeFrequency: 30
   shakeRandomness: 20
   muzzleFlashSpot: {fileID: 573089813}
-  muzzleFlashObject: {fileID: 833436421769514329, guid: 06db763e79ac72046b2334a747078ad3, type: 3}
+  muzzleFlashObject: {fileID: 4330395939816424159, guid: 9ad2c98da7132584983b489a64da9b49, type: 3}
 --- !u!114 &1983865513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2179,9 +2179,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovementScript: {fileID: 350201930}
   speedMultiplier: 8
-  distanceMultiplier: 1
-  positionOffsetPlus: {x: 0.05, y: 0.01, z: 0.01}
-  positionOffsetMinus: {x: -0.05, y: 0.01, z: 0.01}
+  distanceMultiplier: 2
+  positionOffsetPlus: {x: 0.4, y: 0.1, z: 0.1}
+  positionOffsetMinus: {x: -0.4, y: 0.1, z: 0.1}
   rotationOffsetPlus: {x: 0, y: 0, z: 0.08715574, w: 0.9961947}
   rotationOffsetMinus: {x: 0, y: 0, z: -0.08715574, w: 0.9961947}
 --- !u!95 &1983865514

@@ -45,8 +45,8 @@ public class ShootScript : MonoBehaviour
                 Instantiate(muzzleFlashObject, muzzleFlashSpot);
 
                 //Plays the shooting sound and randomizes the pitch slightly
-                shotSound.pitch = Random.Range(0.8f, 1.2f);
-                shotSound.Play();
+                //shotSound.pitch = Random.Range(0.8f, 1.2f);
+                //shotSound.Play();
 
                 //Sets off the animation trigger
                 animator.SetTrigger("Shoot");
