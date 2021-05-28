@@ -9,6 +9,7 @@ public class ShootScript : MonoBehaviour
     public GameObject weapon1, weapon2;
     public LayerMask canHit;
     public AudioSource shotSound;
+    public float damage = 1f;
     [Header("Muzzle Flash and Impact")]
     [Range(0.0f, 50.0f)]
     public float knockback = 0f;
@@ -73,7 +74,7 @@ public class ShootScript : MonoBehaviour
                     if (hit.transform.tag == "Enemy")
                     {
                         EnemyScript enemyScript = hit.transform.gameObject.GetComponent<EnemyScript>();
-                        enemyScript.TakeDamage();
+                        enemyScript.TakeDamage(damage);
                     }
                 }
             }

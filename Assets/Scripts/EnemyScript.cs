@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public int hp = 3;
+    public float hp = 3f;
     public GameObject deadObject;
     void Start()
     {
@@ -16,9 +16,9 @@ public class EnemyScript : MonoBehaviour
 
     }
 
-    public void TakeDamage()
+    public void TakeDamage(float damage) //This is run whenever damage is taken
     {
-        hp--;
+        hp -= damage;
         if (hp <= 0)
         {
             Instantiate(deadObject, transform.position, transform.rotation);

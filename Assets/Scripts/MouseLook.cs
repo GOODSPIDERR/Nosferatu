@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity = 200f;
+    public float mouseSensitivity = 1f;
 
-    float xRotation = 0f;
+    float mouseY = 0f;
 
     public Transform playerBody;
     void Start()
     {
+        //Makes sure that the cursor is locked when gamening
         Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        //Finding the mouse input
+        //float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        //float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        float mouseX = playerBody.transform.localEulerAngles.y + Input.GetAxisRaw("Mouse X") * mouseSensitivity;
+        mouseY -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+        //Sets the new x rotation and makes sure it's clamped between -90 and 90
+        //xRotation -= mouseY;
+        //xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        mouseY = Mathf.Clamp(mouseY, -90f, 90f);
 
-
+        //Functions that actually do the rotation
+        playerBody.transform.localEulerAngles = new Vector3(0, mouseX, 0);
+        transform.localEulerAngles = new Vector3(mouseY, 0f, 0f);
     }
 }
